@@ -30,8 +30,7 @@ const User = mongoose.model(
       skills: {
          type: String,
          required: true,
-      }
-
+      },
    }, { timestamps: true }),
 )
 

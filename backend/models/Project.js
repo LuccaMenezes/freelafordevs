@@ -33,13 +33,18 @@ const Project = mongoose.model(
          required: true,
       },
       startdate: {
-         type: Date,
+         type: String,
          required: true,
       },
       enddate: {
          type: String,
          required: true,
-      }
+      },
+      available: {
+         type: Boolean
+      },
+      user: Object,
+      freelancer: Object,
    }, { timestamps: true }),
 )
 

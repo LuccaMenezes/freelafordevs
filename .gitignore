@@ -1,0 +1,5 @@
+node_modules
+backend/public/images/projects/*.png
+backend/public/images/projects/*.jpg
+backend/public/images/users/*.png
+backend/public/images/users/*.jpg
