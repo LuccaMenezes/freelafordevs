@@ -10,7 +10,7 @@ const getUserByToken = require('../helpers/get-user-by-token')
 
 module.exports = class UserController {
    static async register(req, res) {
-      const { name, email, password, confirmpassword, phone, sector, skills } = req.body
+      const { name, email, password, confirmpassword, phone} = req.body
 
       // validations
       if (!name) {
@@ -38,16 +38,6 @@ module.exports = class UserController {
          return
       }
 
-      if (!sector) {
-         res.status(422).json({ message: 'O setor é obrigatório!' });
-         return
-      }
-
-      if (!skills) {
-         res.status(422).json({ message: 'As habilidades são obrigatórias!' });
-         return
-      }
-
       if (password !== confirmpassword) {
          res.status(422).json({ message: 'As senhas devem ser iguais' });
          return
@@ -70,8 +60,6 @@ module.exports = class UserController {
          name,
          email,
          phone,
-         sector,
-         skills,
          password: passwordHash,
       })
 
@@ -155,7 +143,7 @@ module.exports = class UserController {
       const token = getToken(req)
       const user = await getUserByToken(token)
 
-      const { name, email, password, confirmpassword, phone, sector, skills } = req.body
+      const { name, email, password, confirmpassword, phone } = req.body
 
       if(req.file){
          user.image = req.file.filename
@@ -192,20 +180,6 @@ module.exports = class UserController {
       }
 
       user.phone = phone
-
-      if (!sector) {
-         res.status(422).json({ message: 'O setor é obrigatório!' });
-         return
-      }
-
-      user.sector = sector
-
-      if (!skills) {
-         res.status(422).json({ message: 'As habilidades são obrigatórias!' });
-         return
-      }
-
-      user.skills = skills
 
       if (password !== confirmpassword) {
          res.status(422).json({ message: 'As senhas devem ser iguais' });

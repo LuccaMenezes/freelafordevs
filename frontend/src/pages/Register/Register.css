@@ -1,0 +1,28 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  background: #b4b4b4;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  }
+
+  .box {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 20px;
+  }
+  
+.box input[type='submit'] {
+  border-radius: 8px;
+  background-color: #25b456;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.box input[type='submit']:hover {
+  background-color: #1c8a42;
+}

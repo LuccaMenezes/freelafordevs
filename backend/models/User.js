@@ -23,14 +23,6 @@ const User = mongoose.model(
          type: String,
          required: true,
       },
-      sector: {
-         type: String,
-         required: true,
-      },
-      skills: {
-         type: String,
-         required: true,
-      },
    }, { timestamps: true }),
 )
 
